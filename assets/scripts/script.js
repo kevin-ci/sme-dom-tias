@@ -3,9 +3,9 @@ let hero = {
   health: 100,
   isAlive: true,
   attacks: {
-    webshooter: ["web shooter", 10],
-    kick: ["swing kick", 5],
-    punch: ["spider punch", 2],
+    webshooter: ["web shooter", 10, "web.mp3"],
+    kick: ["swing kick", 5, "kick.mp3"],
+    punch: ["spider punch", 2, "punch.mp3"],
   }
 };
 
@@ -14,19 +14,26 @@ let villain = {
   health: 100,
   isAlive: true,
   attacks: [
-    ["leg strike", 10],
-    ["punch", 2],
-    ["leg choke", 5],
+    ["leg strike", 10, "metal.mp3"],
+    ["punch", 2, "punch.mp3"],
+    ["leg choke", 5, "choke.mp3"],
   ],
   attack() {
     let rand = Math.floor(Math.random() * this.attacks.length);
     let attack = this.attacks[rand];
+    playSound(attack[2]);
     statusTextDiv.innerHTML = `${this.name} used his ${attack[0]} attack and dealt ${attack[1]} damage!`;
     hero.health -= attack[1];
     heroHealthDiv.innerHTML = hero.health;
     playerTurn = !playerTurn;
   },
 };
+
+function playSound(fileName) {
+  let audioDir = "assets/sounds/";
+  let audio = new Audio(audioDir + fileName);
+  audio.play();
+}
 
 let playerTurn = true;
 let heroHealthDiv = document.getElementById("hero-health");
@@ -47,6 +54,7 @@ function handleButtonClick(event) {
     let attackName = event.target.dataset.attack;
     let attack = hero.attacks[attackName];
     let attackDamage = Math.ceil(attack[1] * Math.random());
+    playSound(attack[2]);
     statusTextDiv.innerHTML = `${hero.name} used his ${attack[0]} attack and dealt ${attackDamage} damage!`;
     villain.health -= attackDamage;
     villainHealthDiv.innerHTML = villain.health;
