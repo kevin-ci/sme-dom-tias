@@ -1,0 +1,20 @@
+.character-card {
+    text-align: center;
+}
+
+.character-card img {
+    height: 350px;
+}
+
+.character-card .character-name {
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.status {
+    text-align: center;
+}
+
+#status-text {
+    font-size: larger;
+}

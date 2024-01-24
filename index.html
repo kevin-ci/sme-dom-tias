@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="character-card">
+                    <img src="assets/img/spiderman.png" alt="">
+                    <div class="character-name">Spider-man</div>
+                    <div id="hero-health">Hero health here</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="character-card">
+                    <img src="assets/img/doc_ock.jpg" alt="">
+                    <div class="character-name">Doctor Octopus</div>
+                    <div id="villain-health">Villain health here</div>
+                </div>
+            </div>
+        </div>
+        <div class="row status">
+            <div id="status-text">
+                Click a button to fight!
+            </div>
+        </div>
+        <div class="row buttons">
+            <button class="btn btn-dark" data-attack="webshooter">Web Shooters</button>
+            <button class="btn btn-dark" data-attack="punch">Punch</button>
+            <button class="btn btn-dark" data-attack="kick">Swing Kick</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="assets/scripts/script.js"></script>
+</body>
+</html>
